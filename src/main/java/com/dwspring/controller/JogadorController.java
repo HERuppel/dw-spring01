@@ -50,10 +50,10 @@ public class JogadorController {
     }
   }
 
-  @GetMapping("/{id}") // RECUPERAR POR ID
-  public ResponseEntity<Jogador> GetById(@PathVariable("id") int id) {
+  @GetMapping("/{cod_jogador}") // RECUPERAR POR ID
+  public ResponseEntity<Jogador> GetById(@PathVariable("cod_jogador") int cod_jogador) {
     try {
-      Optional<Jogador> _j = _jogadorRepository.findById(id);
+      Optional<Jogador> _j = _jogadorRepository.findById(cod_jogador);
   
       if(_j.isPresent())
         return new ResponseEntity<Jogador>(_j.get(), HttpStatus.OK);
@@ -87,10 +87,10 @@ public class JogadorController {
     }
   }
 
-  @DeleteMapping("/{id}") // DELETAR POR ID
-  public ResponseEntity<Object> DeleteById(@PathVariable("id") int id) {
+  @DeleteMapping("/{cod_jogador}") // DELETAR POR ID
+  public ResponseEntity<Object> DeleteById(@PathVariable("cod_jogador") int cod_jogador) {
     try {
-      Optional<Jogador> jogador = _jogadorRepository.findById(id);
+      Optional<Jogador> jogador = _jogadorRepository.findById(cod_jogador);
       if(jogador.isPresent()){
         _jogadorRepository.delete(jogador.get());
         return new ResponseEntity<>(HttpStatus.OK);

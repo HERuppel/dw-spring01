@@ -12,7 +12,7 @@ import javax.persistence.Id;
 
 public class Jogador {
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.SEQUENCE)
   private Integer cod_jogador;
 
   @Column(nullable = false)
