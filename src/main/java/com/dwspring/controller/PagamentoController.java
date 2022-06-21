@@ -57,4 +57,25 @@ public class PagamentoController {
       return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
+  
+  @GetMapping("/{cod_jogador}") // RECUPERAR PELO JOGADOR
+  public ResponseEntity<List<Pagamento>> GetByJogador(@PathVariable("cod_jogador") int cod_jogador) {
+    try {
+      Optional<Jogador> _j = _jogadorRepository.findById(cod_jogador);
+      
+      if(_j.isPresent()) {
+        List<Pagamento> _p = _pagamentoRepository.findByJogador(_j.get());
+  
+        if (_p.isEmpty())
+          return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+  
+        return new ResponseEntity<>(_p, HttpStatus.OK);
+      } else {
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+      }
+    } catch (Exception e) {
+      System.out.println(e.getMessage());
+      return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+  }
 }
