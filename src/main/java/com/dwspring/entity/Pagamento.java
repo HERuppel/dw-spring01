@@ -30,6 +30,15 @@ public class Pagamento {
   @JoinColumn(name = "cod_jogador")
   private Jogador jogador;
 
+  public Pagamento () {}
+
+  public Pagamento (Integer ano, Integer mes, Double valor, Jogador jogador) {
+    this.ano = ano;
+    this.mes = mes;
+    this.valor = valor;
+    this.jogador = jogador;
+  }
+    
   public Integer getId() {
     return cod_pagamento;
   }
@@ -60,5 +69,13 @@ public class Pagamento {
 
   public void setValor(Double valor) {
     this.valor = valor;
+  }
+  
+  public Jogador getJogador() {
+    return jogador;
+  }
+
+  public void setJogador(Jogador Jogador) {
+    this.jogador = Jogador;
   }
 }
