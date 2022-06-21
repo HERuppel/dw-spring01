@@ -59,11 +59,11 @@ public class Jogador {
     this.email = email;
   }
 
-  public Date getDataNasc() {
+  public Date getDatanasc() {
     return datanasc;
   }
 
-  public void setDataNasc(Date datanasc) {
+  public void setDatanasc(Date datanasc) {
     this.datanasc = datanasc;
   }
 

@@ -27,8 +27,8 @@ public class JogadorController {
   @PostMapping() // CRIAR
   public ResponseEntity<Jogador> Post(@RequestBody Jogador jogador) {
     try {
-      System.out.println(jogador.getDataNasc());
-      Jogador _j = _jogadorRepository.save(new Jogador(jogador.getNome(), jogador.getEmail(), jogador.getDataNasc()));
+      System.out.println(jogador.getDatanasc());
+      Jogador _j = _jogadorRepository.save(new Jogador(jogador.getNome(), jogador.getEmail(), jogador.getDatanasc()));
 
       return new ResponseEntity<Jogador>(_j, HttpStatus.CREATED);
     } catch (Exception e) {
@@ -73,9 +73,9 @@ public class JogadorController {
   
         jogador.setEmail(newJogador.getEmail());
         jogador.setNome(newJogador.getNome());
-        jogador.setDataNasc(newJogador.getDataNasc());
+        jogador.setDatanasc(newJogador.getDatanasc());
         
-        System.out.println(newJogador.getDataNasc());
+        System.out.println(newJogador.getDatanasc());
         _jogadorRepository.save(jogador);
         return new ResponseEntity<Jogador>(jogador, HttpStatus.OK);
       }
