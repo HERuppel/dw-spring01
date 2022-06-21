@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -75,6 +76,21 @@ public class PagamentoController {
       }
     } catch (Exception e) {
       System.out.println(e.getMessage());
+      return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+  }
+
+  @DeleteMapping("/{cod_pagamento}") // DELETAR POR ID
+  public ResponseEntity<Object> DeleteById(@PathVariable("cod_pagamento") int cod_pagamento) {
+    try {
+      Optional<Pagamento> _p = _pagamentoRepository.findById(cod_pagamento);
+      if(_p.isPresent()){
+        _pagamentoRepository.delete(_p.get());
+        return new ResponseEntity<>(HttpStatus.OK);
+      }
+      
+      return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    } catch (Exception e) {
       return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
