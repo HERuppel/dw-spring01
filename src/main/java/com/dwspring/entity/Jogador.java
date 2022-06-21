@@ -52,7 +52,7 @@ public class Jogador {
     return datanasc;
   }
 
-  public void setValor(Date datanasc) {
+  public void setDataNasc(Date datanasc) {
     this.datanasc = datanasc;
   }
 
