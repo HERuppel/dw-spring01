@@ -7,12 +7,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 
 public class Pagamento {
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="pagamento_sequence")
+  @SequenceGenerator(name="pagamento_sequence", sequenceName="pagamento_sequence")
   private Integer cod_pagamento;
 
   @Column(nullable = false)

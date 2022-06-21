@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -14,7 +15,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class Jogador {
   @Id
-  @GeneratedValue(strategy = GenerationType.SEQUENCE)
+  @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="jogador_sequence")
+  @SequenceGenerator(name="jogador_sequence", sequenceName="jogador_sequence")
   private Integer cod_jogador;
 
   @Column(nullable = false)
