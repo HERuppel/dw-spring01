@@ -24,6 +24,14 @@ public class Jogador {
   @Column(nullable = false)
   private Date datanasc;
 
+  public Jogador() {}
+
+  public Jogador(String nome, String email, Date datanasc) {
+		this.nome = nome;
+		this.email = email;
+		this.datanasc = datanasc;
+	}
+
   public Integer getId() {
     return cod_jogador;
   }
