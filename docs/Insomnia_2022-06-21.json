@@ -1,0 +1,281 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2022-06-21T19:16:00.561Z",
+  "__export_source": "insomnia.desktop.app:v2022.4.1",
+  "resources": [
+    {
+      "_id": "req_04318b6897b844baaf67cd4f3d62695f",
+      "parentId": "fld_0aff720a3dba44bca84a1fbf38b838ec",
+      "modified": 1655838771966,
+      "created": 1655838758169,
+      "url": "{{ _.baseURL }}/{% request 'folder', '', 0 %}",
+      "name": "listar",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1655838758169,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_0aff720a3dba44bca84a1fbf38b838ec",
+      "parentId": "wrk_2459a25ea5ac427e8ec991ee784167ba",
+      "modified": 1655836960032,
+      "created": 1655836960032,
+      "name": "pagamento",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1655836960032,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_2459a25ea5ac427e8ec991ee784167ba",
+      "parentId": null,
+      "modified": 1655830492419,
+      "created": 1655830492419,
+      "name": "dw-spring01",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_2b3c90f78fed499bb63f90fe75ac7f49",
+      "parentId": "fld_0aff720a3dba44bca84a1fbf38b838ec",
+      "modified": 1655838818848,
+      "created": 1655836962296,
+      "url": "{{ _.baseURL }}/{% request 'folder', '', 0 %}/1",
+      "name": "criar",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"ano\": 2000,\n\t\"mes\": 1,\n\t\"valor\": \"10.50\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_dd301b04959548dea00284acbe74e602"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1655836962296,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_8876e06b5e404e33a57c0ce303d1cf1e",
+      "parentId": "fld_a0104995bfde42289a3bc27ab0929b6a",
+      "modified": 1655837687271,
+      "created": 1655833410262,
+      "url": "{{ _.baseURL }}/{% request 'folder', '', 0 %}/7",
+      "name": "deletar",
+      "description": "",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1655833410262,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_a0104995bfde42289a3bc27ab0929b6a",
+      "parentId": "wrk_2459a25ea5ac427e8ec991ee784167ba",
+      "modified": 1655830625324,
+      "created": 1655830625324,
+      "name": "jogador",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1655830625324,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_262bffc3aa184f218ccefa0302353d3d",
+      "parentId": "fld_a0104995bfde42289a3bc27ab0929b6a",
+      "modified": 1655837782045,
+      "created": 1655832424261,
+      "url": "{{ _.baseURL }}/{% request 'folder', '', 0 %}/7",
+      "name": "atualizar",
+      "description": "",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"nome\": \"Renato Cristiano Ruppel\",\n\t\"email\": \"heruppel2@gmail.com\",\n\t\"datanasc\": \"2000-09-23\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_75d37aa921994d27a652a6bbbc7263ec"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1655832424261,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_283b9a4b9772467d8301b186a3671210",
+      "parentId": "fld_a0104995bfde42289a3bc27ab0929b6a",
+      "modified": 1655837775426,
+      "created": 1655832343352,
+      "url": "{{ _.baseURL }}/{% request 'folder', '', 0 %}/39",
+      "name": "por id",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1655832343352,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_2c1f6e65a2cb474580fc5a36c3084c20",
+      "parentId": "fld_a0104995bfde42289a3bc27ab0929b6a",
+      "modified": 1655837701286,
+      "created": 1655831746916,
+      "url": "{{ _.baseURL }}/{% request 'folder', '', 0 %}",
+      "name": "listar",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1655831746916,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_f0fe1bfae68e46788d2e7be9da702392",
+      "parentId": "fld_a0104995bfde42289a3bc27ab0929b6a",
+      "modified": 1655838564361,
+      "created": 1655830629716,
+      "url": "{{ _.baseURL }}/{% request 'folder', '', 0 %}",
+      "name": "criar",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"nome\": \"Renato Ruppel\",\n\t\"email\": \"heruppel2@gmail.com\",\n\t\"datanasc\": \"2000-09-23\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_3952179c463049339c168efdb3961829"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1655830629716,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_546039d69d45e7698f96c071d608ce6188809f2c",
+      "parentId": "wrk_2459a25ea5ac427e8ec991ee784167ba",
+      "modified": 1655830637532,
+      "created": 1655830492432,
+      "name": "Base Environment",
+      "data": {},
+      "dataPropertyOrder": {},
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1655830492432,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_546039d69d45e7698f96c071d608ce6188809f2c",
+      "parentId": "wrk_2459a25ea5ac427e8ec991ee784167ba",
+      "modified": 1655830492433,
+      "created": 1655830492433,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_d29659a683364968ba3f45b6a48d930e",
+      "parentId": "wrk_2459a25ea5ac427e8ec991ee784167ba",
+      "modified": 1655830492426,
+      "created": 1655830492426,
+      "fileName": "dw-spring01",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    },
+    {
+      "_id": "env_ae3cf16e558848cfad53bcbdc040245c",
+      "parentId": "env_546039d69d45e7698f96c071d608ce6188809f2c",
+      "modified": 1655837522634,
+      "created": 1655830639833,
+      "name": "dw-spring01",
+      "data": {
+        "baseURL": "http://localhost:8888/api"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "baseURL"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1655830639833,
+      "_type": "environment"
+    }
+  ]
+}
